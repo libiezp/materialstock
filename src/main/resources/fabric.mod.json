@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "materialstock",
+  "version": "${version}",
+  "name": "Material Stock",
+  "description": "材料清单与备货助手：从投影文件生成按原版标签分类的材料清单；合成计算器自动推导基础材料；框选备货区实时统计已有材料。",
+  "authors": [
+    "libie"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.materialstock.MaterialStock"
+    ]
+  },
+  "mixins": [
+    "materialstock.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": ">=1.21 <1.21.2",
+    "java": ">=21",
+    "fabric-api": "*",
+    "litematica": ">=0.19.54",
+    "malilib": ">=0.21.7"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

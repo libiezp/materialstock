@@ -1,0 +1,8 @@
+{
+  "key.categories.materialstock": "材料备货助手",
+  "key.materialstock.open_gui": "打开主界面（材料清单）",
+  "key.materialstock.select_point": "框选备货区/材料区角点",
+  "key.materialstock.scan_areas": "扫描备货区",
+  "key.materialstock.open_area_gui": "打开备货区界面",
+  "key.materialstock.toggle_material_vis": "切换材料区高亮显示"
+}

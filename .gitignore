@@ -1,0 +1,60 @@
+# ============================================================
+# 材料备货助手 (Material Stock) — Git 忽略规则
+# 原则：只提交「人类写的源码与文档」，其余一律忽略。
+# ============================================================
+
+# ---------- Gradle / 构建产物 ----------
+build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+out/
+classes/
+
+# ---------- IDE ----------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# ---------- loom 开发运行目录（最大的坑，务必保留本规则） ----------
+# run/ 是 loom runClient 的游戏目录，会生成：
+#   saves/       玩家存档（可能几 GB，且含个人游戏内容）
+#   screenshots/ 截图
+#   logs/        游戏日志
+#   crash-reports/
+#   usercache.json / command_history.txt  含账号 UUID 与玩家名
+#   mods/        下载的第三方 mod（有各自许可证，不该随本仓库分发）
+#   config/      本机配置
+# 这些都不属于源码，绝不能进版本库。
+run/
+
+# ---------- 第三方 jar（重要：不能随仓库分发） ----------
+# libs/ 里放的是 litematica / malilib / fabric-api，
+# 它们是别人的作品，各有自己的许可证（非 MIT），
+# 仓库里只保留说明，jar 由使用者自行下载。
+libs/*.jar
+libs/*.JAR
+
+# ---------- 日志与崩溃转储 ----------
+*.log
+hs_err_pid*.log
+replay_pid*.log
+crash-*.txt
+
+# ---------- 操作系统 ----------
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ---------- 临时文件 ----------
+*.tmp
+*.bak
+*.bak-*
+*.orig
+*.rej
+_extract/
+*.swp

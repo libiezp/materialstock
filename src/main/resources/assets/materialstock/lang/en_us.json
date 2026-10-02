@@ -1,0 +1,8 @@
+{
+  "key.categories.materialstock": "Material Stock",
+  "key.materialstock.open_gui": "Open Main GUI (Material List)",
+  "key.materialstock.select_point": "Select Stock/Material Area Corner",
+  "key.materialstock.scan_areas": "Scan Stock Areas",
+  "key.materialstock.open_area_gui": "Open Stock Area GUI",
+  "key.materialstock.toggle_material_vis": "Toggle Material Area Highlight"
+}

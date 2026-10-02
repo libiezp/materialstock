@@ -1,0 +1,64 @@
+plugins {
+    id 'fabric-loom' version '1.16.3'
+    id 'java'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    // Add repositories to retrieve artifacts from in here.
+    mavenCentral()
+}
+
+loom {
+    // 开发环境使用 Mojang 官方映射，与 litestock 一致
+    runs {
+        client {
+            // 覆盖 loom 默认 -Xmx2G：C 盘页面文件紧张时无法提交 2G，降到 1.5G（dev 仅加载 4 个 mod）
+            vmArgs("-Xmx1536m", "-Xms512m")
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // fabric-api 走 maven（loom 会自动展开其嵌套模块 jar 并 remap）；litematica/malilib 复用本地已安装同版本
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation(files(
+        "libs/litematica.jar",
+        "libs/malilib.jar"
+    ))
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        // 必须显式 UTF-8：中文 Windows 默认 GBK，会把描述里的中文写成乱码存档
+        filteringCharset = "UTF-8"
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+    withSourcesJar()
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${base.archivesName.get()}" }
+    }
+}
