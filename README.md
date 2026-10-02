@@ -36,10 +36,17 @@
 
 ## 下载
 
-**玩家（只想装上玩）**：到 [**Releases**](https://github.com/libiezp/materialstock/releases) 下载最新版的
-`materialstock-<版本>.jar`（可选附带的 `SHA256.txt` 可校验文件完整性），再按下面「安装」放进 `mods/`。
+**玩家（只想装上玩）**，两个地方拿到的东西完全一样：
 
-> ⚠️ 请下载 **Releases** 里的 jar，**不要**用仓库右上角 `Code → Download ZIP` —— 那是源码，放进 `mods/` 不会被加载。
+| 方式 | 位置 | 适合 |
+|---|---|---|
+| 直接点开 | [`release/materialstock-1.0.0.jar`](release/materialstock-1.0.0.jar) —— 点开后按右上角 **Download** 按钮 | 就想赶紧下载一个文件 |
+| Releases 页 | [**Releases**](https://github.com/libiezp/materialstock/releases) | 想看清版本说明和历次更新 |
+
+校验值写在 [`release/SHA256.txt`](release/SHA256.txt)，下载后可选校验。
+
+> ⚠️ 不要用仓库右上角的 `Code → Download ZIP` 去装模组 —— 那是**整个源码包**，
+> 里面没有能直接放进 `mods/` 的 jar（本节表格里的那个才是）。
 
 **开发者（想改代码）**：见 [从源码构建](#从源码构建)。
 
