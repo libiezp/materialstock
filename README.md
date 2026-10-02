@@ -36,7 +36,7 @@
 
 ## 下载
 
-**玩家（只想装上玩）**：到 [**Releases**](https://github.com/libie1223/materialstock/releases) 下载最新版的
+**玩家（只想装上玩）**：到 [**Releases**](https://github.com/libiezp/materialstock/releases) 下载最新版的
 `materialstock-<版本>.jar`（可选附带的 `SHA256.txt` 可校验文件完整性），再按下面「安装」放进 `mods/`。
 
 > ⚠️ 请下载 **Releases** 里的 jar，**不要**用仓库右上角 `Code → Download ZIP` —— 那是源码，放进 `mods/` 不会被加载。
